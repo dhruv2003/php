@@ -10,8 +10,10 @@ switch($day){
     break;
   case "Tuesday":
     echo"Tuesday today";
+    break;
   default:
     echo "Error"; 
+    break; // Added break statement for default case
 }
 
 echo "\n" . "<br>"; // Line break after switch case

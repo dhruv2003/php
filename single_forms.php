@@ -25,6 +25,20 @@
     $name = $_POST["name"];
     $age = $_POST["age"];
     $email = $_POST["email"];
+    $errors = [];
+
+    //check for any empty fields
+    if(empty($name)){
+      $errors[] = "NAME IS REQUIRED";
+    }
+    if(empty($email)){
+      $errors[] = "EMAIL IS REQUIRED";
+    }elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+      $errors[] = "Invalid email format.";
+    }
+    if(empty($age)){
+      $errors[] = "AGE IS REQUIRED";
+    }
 
     // Print the submitted data
     echo "<h3>Form Data Submitted:</h3>";
